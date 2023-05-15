@@ -1,19 +1,34 @@
 import React from 'react'
 import Image from 'next/image'
+import { ProductTyping } from '@/typings'
 
 interface Props {
-  imageURL: string;
+  fill?: boolean
+  product: ProductTyping
 }
-const ProductImage = ({ imageURL }: Props) => {
+const ProductImage = ({ product, fill }: Props) => {
   return (
-    <div className='flex-1 flex items-center justify-center max-h-72'>
-      <Image src={imageURL}
-        height={200}
-        width={1000}
-        alt='product'
-        className='object-contain w-[250px] h-[280px]'
-      />
-    </div>
+    <>
+      {
+        fill ? (
+          <Image src={product.image}
+            fill
+            alt={product.title}
+            className='
+        object-contain'
+          />
+
+        ) :
+          <Image src={product.image}
+            height={300}
+            width={1000}
+            alt={product.title}
+            className='
+        object-contain'
+          />
+
+      }
+    </>
   )
 }
 

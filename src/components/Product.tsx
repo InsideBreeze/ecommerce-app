@@ -13,8 +13,8 @@ const Product = ({ product }: Props) => {
       ease-out duration-200 transition-transform'
       href={`/products/${product.id}`}
     >
-      <div className='flex-1'>
-        <ProductImage imageURL={product.image} />
+      <div className='flex-1 max-h-75 relative w-full'>
+        <ProductImage product={product} fill />
       </div>
       <div>
         <div className='font-semibold flex justify-between'>
