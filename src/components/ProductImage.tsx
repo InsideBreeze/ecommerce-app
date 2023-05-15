@@ -25,7 +25,7 @@ const ProductImage = ({ product, fill }: Props) => {
         ) :
           <Image src={product.image}
             height={300}
-            width={350}
+            width={300}
             alt={product.title}
             className='
         object-contain'
