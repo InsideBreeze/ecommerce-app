@@ -19,12 +19,13 @@ const ProductImage = ({ product, fill }: Props) => {
             alt={product.title}
             className={`object-contain ${imageLoading && 'blur-xl'}`}
             onLoadingComplete={() => setImageLoading(false)}
+            sizes='50vw'
           />
 
         ) :
           <Image src={product.image}
             height={300}
-            width={400}
+            width={350}
             alt={product.title}
             className='
         object-contain'
