@@ -8,13 +8,13 @@ const ProductPage = async ({ params }: { params: { id: string } }) => {
     .then(result => result.json())
 
   return (
-    <div className='flex-col md:flex-row flex h-screen items-center justify-center space-x-3 max-w-5xl mx-auto'>
-      <div className='md:mr-5 mt-20 mb-5 flex justify-center items-center flex-3'>
+    <div className='flex-col md:flex-row flex justify-center space-x-3 max-w-5xl mx-auto'>
+      <div className='md:mx-5 mt-20 mb-5 mx-auto'>
         <ProductImage product={product} />
       </div>
-      <div className='divide-y flex-1'>
+      <div className='divide-y md:mt-36'>
         <div className='pb-5 space-y-2'>
-          <p className='md:text-4xl text-2xl font-semibold'>{product.title}</p>
+          <p className='lg:text-4xl md:text-3xl text-2xl font-semibold'>{product.title}</p>
           <p className='md:text-2xl text-gray-600 font-bold'>${product.price}</p>
         </div>
         <p className='text-sm pt-5'>{product.description}</p>

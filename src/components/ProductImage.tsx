@@ -21,7 +21,6 @@ const ProductImage = ({ product, fill }: Props) => {
             onLoadingComplete={() => setImageLoading(false)}
             sizes='50vw'
           />
-
         ) :
           <Image src={product.image}
             height={300}
