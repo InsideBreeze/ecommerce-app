@@ -1,6 +1,5 @@
 'use client'
 import React, { useEffect } from 'react';
-import Image from 'next/image'
 import * as Dialog from '@radix-ui/react-dialog';
 import { ProductTyping } from '@/typings';
 import { useParams, useRouter } from 'next/navigation';
@@ -11,7 +10,6 @@ const ProductDialog = () => {
 
   const [product, setProduct] = React.useState<ProductTyping>()
   const id = useParams().id
-  console.log(id)
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${id}`)
@@ -19,7 +17,7 @@ const ProductDialog = () => {
       .then(product => {
         setProduct(product)
       })
-  }, [])
+  }, [id])
 
   const router = useRouter()
   return (
