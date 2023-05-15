@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import { ProductTyping } from '@/typings'
@@ -7,6 +8,8 @@ interface Props {
   product: ProductTyping
 }
 const ProductImage = ({ product, fill }: Props) => {
+
+  const [imageLoading, setImageLoading] = React.useState(true)
   return (
     <>
       {
@@ -14,14 +17,14 @@ const ProductImage = ({ product, fill }: Props) => {
           <Image src={product.image}
             fill
             alt={product.title}
-            className='
-        object-contain'
+            className={`object-contain ${imageLoading && 'blur-xl'}`}
+            onLoadingComplete={() => setImageLoading(false)}
           />
 
         ) :
           <Image src={product.image}
             height={300}
-            width={1000}
+            width={400}
             alt={product.title}
             className='
         object-contain'
